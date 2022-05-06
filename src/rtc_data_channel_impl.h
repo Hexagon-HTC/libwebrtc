@@ -26,6 +26,8 @@ class RTCDataChannelImpl : public RTCDataChannel,
 
   virtual int id() const override;
 
+  uint64_t buffered_amount() const override;
+
   virtual RTCDataChannelState state() override;
 
   rtc::scoped_refptr<webrtc::DataChannelInterface> rtc_data_channel() {
@@ -36,6 +38,8 @@ class RTCDataChannelImpl : public RTCDataChannel,
   virtual void OnStateChange() override;
 
   virtual void OnMessage(const webrtc::DataBuffer& buffer) override;
+
+  virtual void OnBufferedAmountChange(uint64_t sent_data_size) override;
 
  private:
   rtc::scoped_refptr<webrtc::DataChannelInterface> rtc_data_channel_;

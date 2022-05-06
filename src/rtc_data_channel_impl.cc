@@ -39,6 +39,10 @@ int RTCDataChannelImpl::id() const {
   return rtc_data_channel_->id();
 }
 
+uint64_t RTCDataChannelImpl::buffered_amount() const {
+  return rtc_data_channel_->buffered_amount();
+}
+
 void RTCDataChannelImpl::OnStateChange() {
   webrtc::DataChannelInterface::DataState state = rtc_data_channel_->state();
   switch (state) {
@@ -60,6 +64,11 @@ void RTCDataChannelImpl::OnStateChange() {
   webrtc::MutexLock(crit_sect_.get());
   if (observer_)
     observer_->OnStateChange(state_);
+}
+
+void RTCDataChannelImpl::OnBufferedAmountChange(uint64_t sent_data_size) {
+  if (observer_)
+    observer_->OnBufferedAmountChange(sent_data_size);
 }
 
 RTCDataChannelState RTCDataChannelImpl::state() {
