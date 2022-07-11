@@ -10,10 +10,10 @@ Use the WebRTC branch M97 to compile.
 
 ## Usage
 
-- Download webrtc source into webrtc_src_m92, Please refer to https://webrtc.github.io/webrtc-org/native-code/development/.
+- Download webrtc source into a directory close to root, Please refer to https://webrtc.github.io/webrtc-org/native-code/development/.
 
 ```
-cd webrtc_src_m92/src
+cd webrtc/src
 git clone https://github.com/cloudwebrtc/libwebrtc.git
 ```
 
