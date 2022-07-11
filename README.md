@@ -6,7 +6,7 @@ Used to generate C++ dynamic link library, suitable for package re-release, such
 
 ## Note
 
-Use the WebRTC branch M92 to compile.
+Use the WebRTC branch M97 to compile.
 
 ## Usage
 
@@ -35,8 +35,11 @@ index e60d7dd0bd..b9b6acab8b 100644
      }
 ```
 
+- Generate project
+```
+gn gen out/default --args="is_debug=false rtc_include_tests=false treat_warnings_as_errors=false use_rtti=true is_component_build=false enable_iterator_debugging=false is_clang=false target_os=\"win\" target_cpu=\"x64\""
+```
 - Compile
-
 ```
 ninja -C out/Default libwebrtc
 ```
