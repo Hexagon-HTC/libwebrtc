@@ -73,7 +73,7 @@ set GYP_MSVS_VERSION=2019
 set GYP_GENERATORS=ninja,msvs-ninja
 set GYP_MSVS_OVERRIDE_PATH=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community
 cd src
-gn gen out-debug/Windows-x64 --args="target_os=\"win\" target_cpu=\"x64\" is_component_build=false is_clang=true is_debug=true rtc_use_h264=true rtc_include_tests=false" --ide=vs2019
+gn gen out/default --args="is_debug=false rtc_include_tests=false treat_warnings_as_errors=false use_rtti=true is_component_build=false enable_iterator_debugging=false is_clang=false target_os=\"win\" target_cpu=\"x64\""
 ```
 
 ### Compile
